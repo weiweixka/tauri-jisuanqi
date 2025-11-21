@@ -1,27 +1,3 @@
-<script setup lang="ts">
-
-import { ref } from "vue";
-import { invoke } from "@tauri-apps/api/core";
-
-const greetMsg = ref("");
-const name = ref("");
-const shuzi1 = ref("");
-const shuzi2 = ref("");
-const sumMsg = ref("");
-
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  greetMsg.value = await invoke("greet", { name: name.value });
-}
-async function sum_heji() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  sumMsg.value = await invoke("sum_heji", { shuzi1: shuzi1.value, shuzi2: shuzi2.value});
-}
-
-</script>
-
-
-
 <template>
   <main class="container">
     <h1>Welcome to Tauri + Vue</h1>
@@ -55,6 +31,34 @@ async function sum_heji() {
     
   </main>
 </template>
+
+<script setup lang="ts">
+
+import { ref } from "vue";
+import { invoke } from "@tauri-apps/api/core";
+
+const greetMsg = ref("");
+const name = ref("");
+const shuzi1 = ref("");
+const shuzi2 = ref("");
+const sumMsg = ref("");
+
+async function greet() {
+  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
+  greetMsg.value = await invoke("greet", { name: name.value });
+}
+async function sum_heji() {
+  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
+  sumMsg.value = await invoke("sum_heji", { shuzi1: shuzi1.value, shuzi2: shuzi2.value});
+}
+
+
+
+</script>
+
+
+
+
 
 
 
