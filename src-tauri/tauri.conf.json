@@ -13,9 +13,9 @@
   "app": {
     "windows": [
       {
-        "title": "tauri-jisuanqi",
-        "width": 800,
-        "height": 600
+        "title": "计算器",
+        "width": 325,
+        "height": 565
       }
     ],
     "security": {
